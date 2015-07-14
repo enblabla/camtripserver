@@ -15,6 +15,17 @@ class ViajeManager implements ViajesInterface {
 
     public function crearViaje($id_usuario, $titulo, $fecha) {
         
+        //sentencia sql
+        $sql = "INSERT INTO viajes (titulo,fecha,id_usuario) VALUES "
+                . "('$titulo','$fecha',$id_usuario)";
+        
+        //ejecutamos sentencia
+        $this->dbManager->executeQuery($sql);
+        
+        //return ok
+        echo  "ok";
+        
+        
     }
 
     public function editarViaje($id_viaje, $titulo, $fecha) {
