@@ -23,6 +23,19 @@ class ViajeManager implements ViajesInterface {
 
     public function eliminarViaje($id_viaje) {
         
+        $sql = "SELECT * FROM viajes WHERE id = '$id_viaje'";
+        
+        $datos = $this->dbManager->executeSelectQuery($sql);
+        
+        if(count($datos) == 0){
+
+            $sql = "DELETE FROM viajes WHERE id = '$id_viaje' ";
+            $this->dbManager->executeQuery($sql);
+
+        }else{
+            echo -1;
+        }
+        
     }
 
     public function listarViajes($id_usuario) {
