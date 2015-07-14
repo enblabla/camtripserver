@@ -34,7 +34,7 @@ class ViajeManager implements ViajesInterface {
 
     public function eliminarViaje($id_viaje) {
         
-        $sql = "SELECT * FROM viajes WHERE id = '$id_viaje'";
+        $sql = "SELECT * FROM viajes WHERE id = '$id_viaje'"; 
         
         $datos = $this->dbManager->executeSelectQuery($sql);
         
