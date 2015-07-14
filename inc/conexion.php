@@ -2,5 +2,5 @@
 //Datos de acceso
 $database = "camtrip";
 $user = "root";
-$password = "";
+$password = "root"; //'root' MAMP - '' XAMP
 $host = "localhost";

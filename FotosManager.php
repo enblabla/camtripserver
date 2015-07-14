@@ -28,8 +28,12 @@ class FotosManager implements FotosInterface{
         
     }
 
+    //*** Function Author - HUGO ****
     public function insertarFoto($id_viaje, $foto) {
-        
+        $sql = "INSERT INTO fotos (id_viaje,url) VALUES ('$id_viaje','$foto')";
+        $this->dbManager->executeQuery($sql);
+        //retornamos ok
+        echo "ok";
     }
 
     public function listarFotos($id_viaje) {
