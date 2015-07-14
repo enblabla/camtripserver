@@ -19,6 +19,13 @@ class ViajeManager implements ViajesInterface {
 
     public function editarViaje($id_viaje, $titulo, $fecha) {
         
+        //Sentencia sql para seleccionar viaje
+        $sql = "SELECT id,titulo, fecha FROM viajes WHERE id = $id_viaje";
+        $this->dbManager->executeQuery($sql);
+        //Sentecia para actualizar el titulo y la fecha
+        $query = "UPDATE viajes SET titulo = $titulo, fecha = $fecha";
+        $this->dbManager->executeSelectQuery($query);
+         
     }
 
     public function eliminarViaje($id_viaje) {
